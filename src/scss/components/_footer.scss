@@ -1,0 +1,12 @@
+.footer {
+  height: 80px;
+  margin: 20px 20px 0 20px;
+  border-top: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: white;
+  span {
+    margin: 0 20px;
+  }
+}

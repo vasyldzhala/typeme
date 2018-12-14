@@ -1,0 +1,23 @@
+.navbar {
+  height: 80px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: -webkit-linear-gradient(top, #39B5FA, #2EA3F8);
+  border-radius: 10px;
+  a {
+    margin: 0;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    &:hover {
+      background-color: #2EA3F8;
+    }
+  }
+  img {
+    height: 60px;
+  }
+}

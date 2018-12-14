@@ -1,0 +1,133 @@
+.main-container {
+  margin: 20px;
+  color: white;
+  h2, h3, p {
+    padding-left: 20px;
+  }
+
+}
+
+.statistics {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  span {
+    padding-left: 20px;
+  }
+}
+
+.input-field {
+  margin: 20px 0;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid transparent;
+  p {
+    padding: 0 10px;
+    text-align: center;
+    font-size: 20px;
+    white-space: pre-wrap;
+  }
+  .written {
+    color: lightgray;
+  }
+  .left {
+    color: black;
+  }
+  input {
+    width: 1px;
+  }
+}
+
+.section {
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  color: darkblue;
+  .float-img {
+    float: left;
+    height: 180px;
+    padding: 0 20px 20px 0;
+  }
+  .centred-img {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+  }
+  p, h3 {
+  }
+  li {
+  }
+}
+
+.keyboard {
+  border: 1px solid #13629a;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #30abff;
+  div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 50px;
+    height: 50px;
+    //width: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 4px solid transparent;
+    background-color: #13629a;
+    color: white;
+    white-space: pre;
+    margin: 5px;
+    border-radius: 5px;
+  }
+}
+
+.login-form {
+  max-width: 400px;
+  margin: 40px auto;
+  h2 {
+    text-align: center;
+  }
+  .input-container {
+    text-align: right;
+  }
+  button {
+    margin: 10px;
+  }
+  input[type='text'], input[type='password'] {
+    margin-left: 10px;
+    color: white;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+  }
+  .error {
+    text-align: center;
+    font-size: 14px;
+    color: red;
+  }
+  .warning {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  label, input {
+    font-size: 18px;
+    color: white;
+  }
+
+}
+
+

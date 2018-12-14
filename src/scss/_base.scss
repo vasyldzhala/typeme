@@ -1,0 +1,66 @@
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: get_col(body-bg);
+}
+
+a {
+  text-decoration: none;
+}
+
+button,  input, input:focus, a, a:focus {
+  border: 0;
+  outline: 0;
+  padding: 0;
+}
+
+.btn {
+
+}
+
+.btn-start {
+  margin-left: 20px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: orange;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  transition-duration: 0.2s;
+  &:hover {
+    background-color: orangered;
+  }
+}
+
+.btn-confirm {
+  padding: 10px 30px;
+  border-radius: 10px;
+  background-color: #309cef; //#13629a;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  transition-duration: 0.2s;
+  &:hover {
+    background-color: #13629a;
+  }
+  &[disabled]:hover {
+    background-color: red;
+  }
+
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+

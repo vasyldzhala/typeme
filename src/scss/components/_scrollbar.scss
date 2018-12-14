@@ -1,0 +1,23 @@
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+
+  &-track {
+    background: get_col(scroll-bg);
+    width: 6px;
+    height: 6px;
+    margin: 10px;
+    border-radius: 3px;
+  }
+
+  &-thumb {
+    background: get_col(scroll-thumb);
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+
+    &:hover {
+      background: get_col(scroll-hover);
+    }
+  }
+}
