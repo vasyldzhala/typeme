@@ -70,7 +70,7 @@ class Login extends Component {
       <div className="main-container">
         <form  className="login-form" name="loginForm">
           <h2>Please, Log or Sign Up now</h2>
-          <p>Your login and password may contains letters and numbers without spaces</p>
+          <p>Your login and password may contain letters and numbers without spaces</p>
           <br/>
           <div className="input-container">
             <label htmlFor="userLogin">Login:</label>
@@ -118,7 +118,7 @@ class Login extends Component {
             {this.props.user.details}
           </p>
           <div className="input-container">
-            For confirm press
+            if you are already registered
             <button className="btn-confirm"
                     disabled={!this.isInputsValid()}
                     onClick={this.onLogIn}
@@ -126,7 +126,7 @@ class Login extends Component {
               Log In
             </button>
             <br/>
-            For register new user
+            or create new account 
             <button className="btn-confirm"
                     disabled={!this.isInputsValid()}
                     onClick={this.onSighUp}

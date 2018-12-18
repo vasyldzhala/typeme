@@ -4,26 +4,29 @@ import {connect} from 'react-redux';
 
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faStopwatch, faRunning, faDumbbell, faChalkboardTeacher, faUserCircle, faUserCheck} from '@fortawesome/free-solid-svg-icons';
+import {faStopwatch, faRunning, faChartLine, faChalkboardTeacher, faUserCircle} from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/img/type-me-logo-w.svg';
 
-library.add(faStopwatch, faRunning, faDumbbell, faChalkboardTeacher, faUserCircle, faUserCheck);
+library.add(faStopwatch, faRunning, faChartLine, faChalkboardTeacher, faUserCircle);
 
 class Navbar extends Component {
 
   render() {
     return (
       <nav className="navbar">
-        <img src={logo} alt="Logo" />
-
+        <Link to="/" title="TypeMe!">
+          <img src={logo} alt="Logo" />
+        </Link>
         <Link to="/" title="Practice">
           <FontAwesomeIcon icon="stopwatch"
                            color="white"
                            size="2x"
           />
-          <FontAwesomeIcon icon="running"
+        </Link>
+        <Link to="/progress" title="Progress">
+          <FontAwesomeIcon icon="chart-line"
                            color="white"
-                           size="1x"
+                           size="2x"
           />
         </Link>
         <Link to="/learn" title="Learn">
@@ -38,7 +41,7 @@ class Navbar extends Component {
                            size="2x"
           />
           <span hidden={!this.props.user.success}>
-          Hello, {this.props.user.name}!
+          {this.props.user.name}
         </span>
         </Link>
       </nav>

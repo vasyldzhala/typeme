@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import InputField from './InputField';
 
 import phrases from './phrases';
+import LoginWarn from "./LoginWarn";
 
 class Practice extends Component {
 
@@ -27,10 +29,14 @@ class Practice extends Component {
         <h2>
           Practice and speed up your typing!
         </h2>
+
         <p>
           Take an online typing test to find out your typing speed
           <button className="btn-start" onClick={this.startTypingHandler}>Start Typing</button>
         </p>
+
+        <LoginWarn/>
+
         <InputField phrase={this.state.phrase} />
 
       </main>
@@ -44,8 +50,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  // simpleAction: (data) => dispatch(simpleAction(data)),
-  // requestAction: (data) => dispatch(requestAction(data))
+  // simpleAction: (data) => dispatch(simpleAction(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Practice);

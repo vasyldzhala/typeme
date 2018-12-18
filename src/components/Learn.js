@@ -94,6 +94,8 @@ const Learn = props => {
           Take a break if you feel that you get distracted easily and are making a lot of mistakes.
           It is more productive to come back when you feel refreshed.
         </p>
+        <hr/>
+        <p>*Materials from www.ratatype.com were used</p>
 
       </section>
     </div>

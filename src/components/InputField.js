@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import Keyboard from './Keyboard';
+import {connect} from 'react-redux';
 
-export default class InputField extends Component {
+import Keyboard from './Keyboard';
+import saveResult from '../actions/saveResult';
+import getStatistics from "../actions/getStatistics";
+
+class InputField extends Component {
   constructor(props) {
     super(props);
     this.regularStyle = { borderColor: 'transparent' };
@@ -36,13 +40,23 @@ export default class InputField extends Component {
           }
         }
         if (!this.left.length) {
-          this.results = this.getResults();
+          this.results = {
+            user_id: this.props.user.id,
+            ...this.getResults()
+          };
           this.isFinished = true;
           console.log('results!' , this.results);
+          this.saveResults(this.results);
+          //
         }
       }
     }
   }
+
+  saveResults = results => {
+    const url = 'https://typeme.jala.in.ua/db/saveresult.php';
+    this.props.saveResult(url, results);
+  };
 
   setProperies = string => {
     this.inputStyle = this.regularStyle;
@@ -55,7 +69,7 @@ export default class InputField extends Component {
 
   getAccuracy = () => {
     const written = this.written.length;
-    return (written) ? (100 * (1 - this.errors / this.written.length)).toFixed(1) : '__';
+    return (written) ? (100 * (1 - this.errors / this.written.length)).toFixed(2) : '__';
   };
 
   getSpeed = () => {
@@ -82,12 +96,13 @@ export default class InputField extends Component {
   render () {
     return (
       <div>
+
         <div className="statistics">
           <span>Symbols: {this.written.length}</span>
           <span>Typing Speed: {this.getSpeed()}WPM</span>
           <span>Accuracy: {this.getAccuracy()}%</span>
-
         </div>
+
         <div className="input-field" style={ this.inputStyle }>
           <p>
             <span className="written">{this.written}</span>
@@ -100,11 +115,26 @@ export default class InputField extends Component {
             <span className="left">{this.left}</span>
           </p>
         </div>
-        <Keyboard nextKey={this.left[0] || ''}/>
+
+        <Keyboard nextKey={this.left[0]}/>
+
       </div>
 
     )
   }
 
 }
+
+const mapStateToProps = state => ({
+  user: state.userReducer
+});
+
+const mapDispatchToProps = dispatch => ({
+  saveResult: (url, result) => dispatch(saveResult(url, result)),
+  getStatistics: (url, user_id) => dispatch(getStatistics(url, user_id))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(InputField);
+
+
 

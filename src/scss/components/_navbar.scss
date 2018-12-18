@@ -1,4 +1,5 @@
 .navbar {
+  overflow: hidden;
   height: 80px;
   margin: 20px;
   display: flex;
@@ -9,10 +10,11 @@
   border-radius: 10px;
   a {
     margin: 0;
-    padding: 10px;
+    padding: 15px;
     border-radius: 10px;
     color: white;
     font-weight: bold;
+    transition-duration: 0.2s;
     &:hover {
       background-color: #2EA3F8;
     }
