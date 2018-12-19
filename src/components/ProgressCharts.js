@@ -20,9 +20,7 @@ class ProgressCharts extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     const rawData = nextProps.progressData;
-    console.log(rawData);
     this.speed = [
       {
         label: 'Typing speed',
@@ -40,7 +38,7 @@ class ProgressCharts extends Component {
   render() {
 
     const ChartComponent = (props) => {
-      if (props.conditions) { return (
+      if (props.data) { return (
         <div className="chart-container">
           <Chart
             data={props.data}
@@ -51,7 +49,7 @@ class ProgressCharts extends Component {
           />
         </div>
       )} else {
-        return (<div><p>Loading...</p></div>)
+        return (<div>Loading...</div>)
       }
     };
 
@@ -66,12 +64,12 @@ class ProgressCharts extends Component {
         <div hidden={!this.props.user.id}>
           <section className="section">
             <h3>Typing speed, Words Per Minute</h3>
-            <ChartComponent conditions={this.speed} data={this.speed}/>
+            <ChartComponent data={this.speed}/>
           </section>
 
           <section className="section">
             <h3>Accuracy, %</h3>
-            <ChartComponent conditions={this.accuracy} data={this.accuracy}/>
+            <ChartComponent data={this.accuracy}/>
           </section>
 
         </div>

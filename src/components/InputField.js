@@ -3,11 +3,12 @@ import {connect} from 'react-redux';
 
 import Keyboard from './Keyboard';
 import saveResult from '../actions/saveResult';
-import getStatistics from "../actions/getStatistics";
+import Results from "./Results";
 
 class InputField extends Component {
   constructor(props) {
     super(props);
+
     this.regularStyle = { borderColor: 'transparent' };
     this.errorStyle = { borderColor: 'red' };
     this.inputStyle = this.regularStyle;
@@ -28,11 +29,16 @@ class InputField extends Component {
         if (key === this.left[0]) {
           this.written = this.written.concat(this.left[0]);
           this.left = this.left.slice(1);
-          this.setState({written: this.written});
           this.inputStyle = this.regularStyle;
+
+          this.setState({
+            written: this.written
+          });
+
         } else {
           if (key !== 'Shift') {
             this.inputStyle = this.errorStyle;
+
             this.setState({
               written: this.written,
               errors: this.errors++
@@ -45,9 +51,7 @@ class InputField extends Component {
             ...this.getResults()
           };
           this.isFinished = true;
-          console.log('results!' , this.results);
           this.saveResults(this.results);
-          //
         }
       }
     }
@@ -74,8 +78,11 @@ class InputField extends Component {
 
   getSpeed = () => {
     const symbInWord = 5.1;
-    return (this.startFlag) ? '__'
-      : ( 1000 * 60 * this.written.length / (Date.now() - this.startTime) / symbInWord ).toFixed(2);
+    const milliSeconds = 60000;
+    return (this.startFlag) ?
+      '__'
+      :
+      ( milliSeconds * this.written.length / (Date.now() - this.startTime) / symbInWord ).toFixed(2);
   };
 
   getResults = () => {
@@ -94,6 +101,9 @@ class InputField extends Component {
   }
 
   render () {
+
+    const isResults = (this.isFinished && !this.startFlag);
+
     return (
       <div>
 
@@ -116,7 +126,11 @@ class InputField extends Component {
           </p>
         </div>
 
-        <Keyboard nextKey={this.left[0]}/>
+        { !isResults ?
+          <Keyboard  nextKey={this.left[0]}/>
+          :
+          <Results results={this.results}/>
+        }
 
       </div>
 
@@ -130,8 +144,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  saveResult: (url, result) => dispatch(saveResult(url, result)),
-  getStatistics: (url, user_id) => dispatch(getStatistics(url, user_id))
+  saveResult: (url, result) => dispatch(saveResult(url, result))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(InputField);

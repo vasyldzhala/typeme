@@ -10,11 +10,14 @@ import Login from './components/Login';
 import Footer from './components/Footer';
 import ProgressCharts from "./components/ProgressCharts";
 
+import {Dots} from 'react-preloaders';
+
 class App extends Component {
 
   render() {
     return (
       <div className="wrapper">
+        <Dots/>
 
         <Router>
           <div className="content">
@@ -28,6 +31,7 @@ class App extends Component {
             </Switch>
           </div>
         </Router>
+
         <Footer />
 
       </div>

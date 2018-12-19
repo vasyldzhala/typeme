@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import InputField from './InputField';
-
 import phrases from './phrases';
 import LoginWarn from "./LoginWarn";
+
 
 class Practice extends Component {
 
@@ -15,42 +14,43 @@ class Practice extends Component {
     this.state = { phrase: this.getRandomPhrase(this.phrases) };
   }
 
-  getRandomPhrase = arr => arr[1];
+  getRandomPhrase = arr => arr[Math.floor((Math.random() * arr.length))];
 
   startTypingHandler = event => {
     this.setState({
-      phrase: this.phrases[Math.floor((Math.random() * this.phrases.length))]
+      phrase: this.getRandomPhrase(this.phrases)
     });
   };
 
   render () {
     return (
       <main className="main-container">
+
         <h2>
           Practice and speed up your typing!
         </h2>
+        <div className="main-content">
+          <p>
+            Learn
+            <Link className="link" to="/learn" title="Learn">
+              how to touch type
+            </Link>
+            to improve your typing skills
+          </p>
+          <p>
+            Take an online typing test to find out your typing speed
+            <button className="btn-start" onClick={this.startTypingHandler}>Start Typing</button>
+          </p>
 
-        <p>
-          Take an online typing test to find out your typing speed
-          <button className="btn-start" onClick={this.startTypingHandler}>Start Typing</button>
-        </p>
+          <LoginWarn/>
 
-        <LoginWarn/>
+        </div>
 
         <InputField phrase={this.state.phrase} />
 
       </main>
     )
   }
-
 }
 
-const mapStateToProps = state => ({
-  ...state
-});
-
-const mapDispatchToProps = dispatch => ({
-  // simpleAction: (data) => dispatch(simpleAction(data))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Practice);
+export default Practice;

@@ -1,11 +1,14 @@
 import React from 'react';
+import levels from './levels';
 import howToSit from '../assets/img/how-to-sit.png';
 import keyboardScheme from '../assets/img/keyboard-scheme.png';
 
 const Learn = props => {
   return (
     <div className="main-container">
+
       <h2>Learn how to touch type</h2>
+
       <section className="section">
         <p>
           Touch typing is all about the idea that each finger has its own area on the keyboard.
@@ -14,12 +17,12 @@ const Learn = props => {
           through muscle memory.
         </p>
 
-      </section>
-      <section className="section">
         <img className="float-img" src={howToSit} alt=""/>
+
         <h3>
           Sitting posture for typing
         </h3>
+
         <p>
           Sit straight and remember to keep your back straight.
           Keep your elbows bent at the right angle.
@@ -31,7 +34,10 @@ const Learn = props => {
         </p>
         <hr/>
 
-        <h3>Home row position</h3>
+        <h3>
+          Home row position
+        </h3>
+
         <p>
           Curve your fingers a little and put them on the ASDF and JKL;
           keys which are located in the middle row of the letter keys.
@@ -41,7 +47,11 @@ const Learn = props => {
           aide in finding these keys without looking.
         </p>
         <hr/>
-        <h3>Кeyboard scheme</h3>
+
+        <h3>
+          Кeyboard scheme
+        </h3>
+
         <p>
           The color-coded keyboard under lesson input field will help you to understand
           which finger should press each key.</p>
@@ -74,7 +84,10 @@ const Learn = props => {
 
         <hr/>
 
-        <h3>Fingers motion</h3>
+        <h3>
+          Fingers motion
+        </h3>
+
         <p>
           Don't look at the keys when you type.
           Just slide your fingers around until they find the home row marking.
@@ -95,8 +108,35 @@ const Learn = props => {
           It is more productive to come back when you feel refreshed.
         </p>
         <hr/>
-        <p>*Materials from www.ratatype.com were used</p>
+        <p>*Materials from <a href="https://www.ratatype.com">www.ratatype.com</a> were used</p>
 
+      </section>
+
+      <h2>
+        How do we measure typing skill level?
+      </h2>
+
+      <section className="section">
+        <p>
+          Your typing skill depends on typing speed.
+        </p>
+        <div className="levels-gallery">
+          {levels.map(level => (
+            <div key={level.name}>
+              <img src={level.img} alt=""/>
+              <span>
+                {level.from}...{level.to} WPM - {level.name}
+              </span>
+            </div>
+            ))
+          }
+        </div>
+        <p>
+          We measure your typing speed in words per minute (WPM).
+          By the "word" we mean an average of 5.1 (in english) characters including spaces.
+          However, we don't allow you to continue typing if you have a typo in your test,
+          you have to fix it to continue.
+        </p>
       </section>
     </div>
   )

@@ -18,14 +18,6 @@ class Login extends Component {
       return /^[0-9a-zA-Zа-яієїА-ЯЄЇІ]+$/u.test(str);
     };
 
-    this.onBlurHandler = event => {
-      const name = event.target.name;
-      const value = event.target.value;
-      this.setState({
-        isValid: {...this.state.isValid, [name]: this.checkInput(value)}
-      })
-    };
-
     this.onInputChangeHandler = event => {
       const name = event.target.name;
       const value = event.target.value;
@@ -62,7 +54,7 @@ class Login extends Component {
         password: this.state.password
       };
       this.props.fetchUser(url, user);
-    }
+    };
   }
 
   render() {
@@ -70,75 +62,79 @@ class Login extends Component {
       <div className="main-container">
         <form  className="login-form" name="loginForm">
           <h2>Please, Log or Sign Up now</h2>
-          <p>Your login and password may contain letters and numbers without spaces</p>
-          <br/>
-          <div className="input-container">
-            <label htmlFor="userLogin">Login:</label>
-            <input
-              className="text-input"
-              type="text"
-              name="login"
-              required
-              maxLength="20"
-              onBlur={this.onInputChangeHandler}
-              onChange={this.onInputChangeHandler}
-            />
-          </div>
-
-          <p className="error" >
+          <div className="section">
+            <p>Your login and password may contain letters and numbers without spaces</p>
+            <br/>
+            <div className="input-container">
+              <label htmlFor="userLogin">Login:</label>
+              <input
+                className="text-input"
+                type="text"
+                name="login"
+                required
+                maxLength="20"
+                onBlur={this.onInputChangeHandler}
+                onChange={this.onInputChangeHandler}
+              />
+            </div>
+            <p className="error" >
             <span hidden={this.state.isValid.login}>
 	            Invalid login!
             </span>
-          </p>
-          <br/>
+            </p>
+            <br/>
 
-          <div className="input-container">
-            <label htmlFor="userPassword">Password:</label>
-            <input
-              className="text-input"
-              type="password"
-              name="password"
-              required
-              maxLength="20"
-              onBlur={this.onInputChangeHandler}
-              onChange={this.onInputChangeHandler}
-            />
-          </div>
+            <div className="input-container">
+              <label htmlFor="userPassword">Password:</label>
+              <input
+                className="text-input"
+                type="password"
+                name="password"
+                required
+                maxLength="20"
+                onBlur={this.onInputChangeHandler}
+                onChange={this.onInputChangeHandler}
+              />
+            </div>
 
-          <p className="error">
+            <p className="error">
             <span  hidden={this.state.isValid.password}>
 	            Invalid password!
             </span>
-          </p>
+            </p>
 
-          <p className="error warning"
-             id="warning"
-             hidden={this.props.user.success}
-          >
-            {this.props.user.details}
-          </p>
-          <div className="input-container">
-            if you are already registered
-            <button className="btn-confirm"
-                    disabled={!this.isInputsValid()}
-                    onClick={this.onLogIn}
+            <p className="error warning"
+               id="warning"
+               hidden={this.props.user.success}
             >
-              Log In
-            </button>
+              {this.props.user.details}
+            </p>
             <br/>
-            or create new account 
-            <button className="btn-confirm"
-                    disabled={!this.isInputsValid()}
-                    onClick={this.onSighUp}
-            >
-              Sign Up
-            </button>
+            <div className="input-container">
+              if you are already registered
+              <button className="btn-confirm"
+                      disabled={!this.isInputsValid()}
+                      onClick={this.onLogIn}
+              >
+                Log In
+              </button>
+              <br/>
+              otherwise create new account
+              <button className="btn-confirm"
+                      disabled={!this.isInputsValid()}
+                      onClick={this.onSighUp}
+              >
+                Sign Up
+              </button>
 
-            <h3 hidden={!this.props.user.success}>
-              Hello, {this.props.user.name}!
-            </h3>
+              <h3 hidden={!this.props.user.success}>
+                Hello, {this.props.user.name}!
+              </h3>
 
+            </div>
           </div>
+
+
 
         </form>
 

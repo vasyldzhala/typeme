@@ -18,10 +18,6 @@ button,  input, input:focus, a, a:focus {
   padding: 0;
 }
 
-.btn {
-
-}
-
 .btn-start {
   margin-left: 20px;
   padding: 5px 10px;
@@ -34,14 +30,14 @@ button,  input, input:focus, a, a:focus {
   font-weight: bold;
   transition-duration: 0.2s;
   &:hover {
-    background-color: orangered;
+    background-color: #f19800;
   }
 }
 
 .btn-confirm {
   padding: 10px 30px;
   border-radius: 10px;
-  background-color: #309cef; //#13629a;
+  background-color: #309cef;
   color: white;
   text-transform: uppercase;
   font-family: 'Ubuntu', sans-serif;
@@ -54,7 +50,6 @@ button,  input, input:focus, a, a:focus {
   &[disabled]:hover {
     background-color: red;
   }
-
 }
 
 hr {

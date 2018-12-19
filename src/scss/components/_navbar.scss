@@ -8,6 +8,10 @@
   justify-content: space-around;
   background: -webkit-linear-gradient(top, #39B5FA, #2EA3F8);
   border-radius: 10px;
+  @media (max-width: 768px) {
+    margin: 0 0 20px 0;
+    border-radius: 0;
+  }
   a {
     margin: 0;
     padding: 15px;
@@ -15,11 +19,27 @@
     color: white;
     font-weight: bold;
     transition-duration: 0.2s;
+    @media (max-width: 768px) {
+      padding: 5px;
+    }
     &:hover {
       background-color: #2EA3F8;
     }
   }
   img {
     height: 60px;
+    @media (max-width: 768px) {
+      height: 50px;
+    }
   }
+  svg {
+    height: 32px;
+    width: auto;
+    @media (max-width: 768px) {
+      height: 28px;
+    }
+  }
+}
+.current {
+  background-color: #2EA3F8;
 }

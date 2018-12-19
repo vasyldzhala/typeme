@@ -8,7 +8,7 @@ class LoginWarn extends Component {
     return (
       <p className="warning" hidden={this.props.user.id}>
         Please,
-        <Link to="/login" title="Log In">
+        <Link className="link" to="/login" title="Log In">
           Log In
         </Link>
         to save your results and view statistics!
