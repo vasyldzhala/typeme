@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
 
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -17,7 +17,6 @@ import {
 library.add(faStopwatch, faRunning, faChartLine, faChalkboardTeacher, faUserCircle);
 
 class Navbar extends Component {
-
   render() {
     return (
       <nav className="navbar">
@@ -30,36 +29,39 @@ class Navbar extends Component {
                            size="2x"
           />
         </NavLink>
-        <NavLink exact activeClassName="current" to="/progress" title="Progress">
+        <NavLink  activeClassName="current" to="/progress" title="Progress">
           <FontAwesomeIcon icon="chart-line"
                            color="white"
                            size="2x"
           />
         </NavLink>
-        <NavLink exact activeClassName="current" to="/learn" title="Learn">
+        <NavLink  activeClassName="current" to="/learn" title="Learn">
           <FontAwesomeIcon icon="chalkboard-teacher"
                            color="white"
                            size="2x"
           />
         </NavLink>
-        <NavLink exact activeClassName="current" to="/login" title="Log In">
+        <NavLink  activeClassName="current" to="/login" title="Log In">
           <FontAwesomeIcon icon="user-circle"
                            color="white"
                            size="2x"
           />
-          <span hidden={!this.props.user.success}>
-            {this.props.user.name}
-          </span>
+          {/* TODO: Maybe move it to separate component with store connection */}
+          {/*<span hidden={!this.props.user.success}>*/}
+            {/*{this.props.user.name}*/}
+          {/*</span>*/}
         </NavLink>
       </nav>
     )
   }
 }
 
-const mapStateToProps = state => ({
-  user: state.userReducer
-});
+// TODO: should be passed via props
+// const mapStateToProps = state => ({
+//   user: state.userReducer
+// });
 
-export default connect(mapStateToProps)(Navbar);
+// export default connect(mapStateToProps)(Navbar);
+export default Navbar;
 
 
