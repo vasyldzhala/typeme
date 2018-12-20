@@ -1,10 +1,28 @@
 $colors: (
   body-bg: #55C5FE,
+  header-bg1: #39B5FA,
+  header-bg2: #2EA3F8,
+  header-hov: #2EA3F8,
+  section-bg: white,
 
+  btn-start-bg: orange,
+  btn-start-bg-hov: #f19800,
+  btn-conf-bg: #309cef,
+  btn-conf-bg-hov: #13629a,
+  btn-conf-bg-dis: red,
 
+  icon: white,
+  text-light: white,
+  text-dark: #133a70,
+  text-grey: lightgray,
+  text-err: red,
+
+  keyb-bg: #309cef,
+  key-bg: #13629a,
+
+  hr1: rgba(0, 0, 0, 0.1),
+  hr2: rgba(255, 255, 255, 0.3),
   scroll-bg: #ffffff,
   scroll-thumb: #ccd5e4,
   scroll-hover: #888,
-  page-header-bg: #2f364a,
-  footer-button-bg: #1f2637
 );

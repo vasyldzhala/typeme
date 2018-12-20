@@ -73,7 +73,7 @@ class InputField extends Component {
 
   getAccuracy = () => {
     const written = this.written.length;
-    return (written) ? (100 * (1 - this.errors / this.written.length)).toFixed(2) : '__';
+    return (written) ? (100 * (1 - this.errors / (this.written.length + this.errors))).toFixed(2) : '__';
   };
 
   getSpeed = () => {

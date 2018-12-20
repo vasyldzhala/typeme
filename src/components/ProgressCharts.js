@@ -4,6 +4,7 @@ import { Chart } from "react-charts";
 
 import getStatistics from '../actions/getStatistics';
 import LoginWarn from "./LoginWarn";
+import Spinner from './spinner';
 
 class ProgressCharts extends Component {
 
@@ -49,7 +50,7 @@ class ProgressCharts extends Component {
           />
         </div>
       )} else {
-        return (<div>Loading...</div>)
+        return (<div><Spinner/></div>)
       }
     };
 

@@ -1,0 +1,36 @@
+.login-form {
+  max-width: 500px;
+  margin: 40px auto;
+  h2 {
+    text-align: center;
+  }
+  .input-container {
+    text-align: right;
+  }
+  button {
+    margin: 10px 0 10px 10px;
+  }
+  input[type='text'], input[type='password'] {
+    margin-left: 10px;
+    color: get_col(text-dark);
+    background-color: transparent;
+    border-bottom: 2px solid get_col(text-dark);
+  }
+  .error {
+    text-align: center;
+    font-size: 14px;
+    color: get_col(text-err);
+  }
+  .warning {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  label {
+    font-size: 18px;
+    color: get_col(text-dark);
+  }
+  .welcome {
+    margin: 40px auto;
+    text-align: center;
+  }
+}

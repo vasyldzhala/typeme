@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import fetchUser from '../actions/fetchUser';
 
+import Spinner from './spinner';
+
 class Login extends Component {
-  constructor (props) {
-    super (props);
+  constructor(props) {
+    super(props);
     this.state = {
       isValid: {
         login: true,
         password: true
       },
+      isWelcome: false,
       login: '',
       password: ''
     };
@@ -44,6 +47,9 @@ class Login extends Component {
         password: this.state.password
       };
       this.props.fetchUser(url, user);
+      this.setState({
+        isWelcome: true
+      });
     };
 
     this.onSighUp = event => {
@@ -54,13 +60,34 @@ class Login extends Component {
         password: this.state.password
       };
       this.props.fetchUser(url, user);
+      this.setState({
+        isWelcome: true
+      });
     };
   }
 
   render() {
+
+    const WelcomeMessage = () => {
+      return (
+        <div hidden={!this.state.isWelcome}>
+          {
+            (!this.props.user.success && !this.props.user.errorMessage) ?
+              <Spinner/>
+              :
+              (this.props.user.success) ?
+                <div className="welcome"><h3>Hello, {this.props.user.name}!</h3></div>
+                :
+                <div className="welcome"><h3>{this.props.user.errorMessage}</h3></div>
+          }
+        </div>
+      )
+    };
+
+
     return (
       <div className="main-container">
-        <form  className="login-form" name="loginForm">
+        <form className="login-form" name="loginForm">
           <h2>Please, Log or Sign Up now</h2>
           <div className="section">
             <p>Your login and password may contain letters and numbers without spaces</p>
@@ -77,7 +104,7 @@ class Login extends Component {
                 onChange={this.onInputChangeHandler}
               />
             </div>
-            <p className="error" >
+            <p className="error">
             <span hidden={this.state.isValid.login}>
 	            Invalid login!
             </span>
@@ -98,7 +125,7 @@ class Login extends Component {
             </div>
 
             <p className="error">
-            <span  hidden={this.state.isValid.password}>
+            <span hidden={this.state.isValid.password}>
 	            Invalid password!
             </span>
             </p>
@@ -127,13 +154,10 @@ class Login extends Component {
                 Sign Up
               </button>
 
-              <h3 hidden={!this.props.user.success}>
-                Hello, {this.props.user.name}!
-              </h3>
+              <WelcomeMessage/>
 
             </div>
           </div>
-
 
 
         </form>

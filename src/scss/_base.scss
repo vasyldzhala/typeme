@@ -2,12 +2,6 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-body {
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: get_col(body-bg);
-}
-
 a {
   text-decoration: none;
 }
@@ -22,22 +16,22 @@ button,  input, input:focus, a, a:focus {
   margin-left: 20px;
   padding: 5px 10px;
   border-radius: 10px;
-  background-color: orange;
-  color: white;
+  background-color: get_col(btn-start-bg);
+  color: get_col(text-light);
   text-transform: uppercase;
   font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
   font-weight: bold;
   transition-duration: 0.2s;
   &:hover {
-    background-color: #f19800;
+    background-color: get_col(btn-start-bg-hov);
   }
 }
 
 .btn-confirm {
   padding: 10px 30px;
   border-radius: 10px;
-  background-color: #309cef;
+  background-color: get_col(btn-conf-bg);
   color: white;
   text-transform: uppercase;
   font-family: 'Ubuntu', sans-serif;
@@ -45,17 +39,17 @@ button,  input, input:focus, a, a:focus {
   font-weight: bold;
   transition-duration: 0.2s;
   &:hover {
-    background-color: #13629a;
+    background-color: get_col(btn-conf-bg-hov);
   }
   &[disabled]:hover {
-    background-color: red;
+    background-color: get_col(btn-conf-bg-dis);
   }
 }
 
 hr {
   border: 0;
   height: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid get_col(hr1);
+  border-bottom: 1px solid get_col(hr2);
 }
 

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 import './App.scss';
 
@@ -21,7 +22,7 @@ class App extends Component {
 
         <Router>
           <div className="content">
-            <Navbar />
+            <Navbar user={this.props.user} />
             <Switch>
               <Route exact path="/" component={Practice}/>
               <Route path="/progress" component={ProgressCharts}/>
@@ -39,4 +40,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  user: state.userReducer
+});
+
+export default connect(mapStateToProps)(App);

@@ -7,10 +7,14 @@ const phrases = [
   'The SHIFT key is always pressed by the pinky finger opposite to the one hitting the other key.',
   'Use the thumb of whichever hand is more convenient for you to press the Space bar.',
   "Don't look at the keys when you type. Just slide your fingers around until they find the home row marking.",
-  'Limit your hand and finger movement only to what is necessary to press a specific key. Keep your hands and fingers close to the base position.',
+  'Limit your hand and finger movement only to what is necessary to press a specific key.',
+  'Keep your hands and fingers close to the base position.',
   'Pay attention to ring fingers and little fingers, since they are considerably underdeveloped.',
   'F and J keys under your index fingers should have a raised line on them to aide in finding these keys without looking.',
-  'Practice regularly and your fingers will learn their location on the keyboard through muscle memory.'
+  'Practice regularly and your fingers will learn their location on the keyboard through muscle memory.',
+  'Your typing skill depends on typing speed.We measure your typing speed in words per minute.',
+  'By the word we mean an average of 5.1 characters including spaces.',
+  'However, it doesn\'t allow to continue typing if you have a typo, you have to fix it.'
 ];
 
 export default phrases;

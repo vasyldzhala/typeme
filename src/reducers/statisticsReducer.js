@@ -18,7 +18,7 @@ export default (state = statisticsInitState, action) => {
       return {
         ...statisticsInitState,
         success: false,
-        details: resp
+        details: 'Network Error, try later'
       };
     default:
       return state;

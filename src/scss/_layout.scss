@@ -1,14 +1,20 @@
 body {
   height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: get_col(body-bg);
 }
+
 .wrapper {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
+
 .content {
   flex: 1 0 auto;
 }
+
 .footer {
   flex: 0 0 auto;
 }

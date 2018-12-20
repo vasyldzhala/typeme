@@ -12,6 +12,7 @@
 /build
 
 /db
+/src/assets
 
 # misc
 .DS_Store

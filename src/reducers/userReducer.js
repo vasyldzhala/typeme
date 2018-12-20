@@ -22,7 +22,12 @@ export default (state = userInitState, action) => {
           details: resp
         }
       }
-
+    case 'SET_USER_ERR':
+      return {
+        ...state,
+        success: false,
+        errorMessage: 'Network Error, try later'
+      };
     default:
       return state;
   }

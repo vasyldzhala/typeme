@@ -134,8 +134,8 @@ const Learn = props => {
         <p>
           We measure your typing speed in words per minute (WPM).
           By the "word" we mean an average of 5.1 (in english) characters including spaces.
-          However, we don't allow you to continue typing if you have a typo in your test,
-          you have to fix it to continue.
+          However, it doesn't allow to continue typing if you have a typo,
+          you have to fix it.
         </p>
       </section>
     </div>

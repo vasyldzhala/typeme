@@ -12,6 +12,12 @@ const fetchUser = (url, user) => dispatch => {
         payload: resp
       })
     })
+    .catch(reason => {
+      dispatch({
+        type: 'SET_USER_ERR',
+        payload: reason
+      })
+    })
 };
 
 export default fetchUser;
