@@ -1,44 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# TypeMe - typing simulator
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+It's a web app to type a short piece of text, to find out how fast can you type, 
+test your typing speed in wpm and give learning information about how to type faster.
+You can save results and view progress in your typing skills.
 
-### `npm start`
+You can try it here: [typeme.jala.in.ua](https://typeme.jala.in.ua).
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![screenshot](https://github.com/vasyldzhala/typeme/blob/master/typeme_screen.JPG)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Aim of project
 
-### `npm test`
+The TypeMe app is a training project to understanding front-end technologies. 
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech stack
 
-### `npm run build`
+Project was powered by `HTML`, `SCSS`, `JavaScript ES2015`, `ReactJS`, `Redux`; `PHP` and `mySQL` for back-end. 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting started
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Clone repository from `github`:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+git clone https://github.com/vasyldzhala/typeme.git
+```
 
-### `npm run eject`
+Move to project's directory and install:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm cd typeme
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployment
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Run in console 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+npm run build
+```
 
-## Learn More
+Application will be bundled into `build` directory.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+For development mode run
+
+```
+npm run start
+```
+
+## Author
+
+* **Vasyl Dzhala** - [vasyldzhala](https://github.com/vasyldzhala)
+
+## The project was created as part of the training 
+
+in [front-camp-2018](https://github.com/front-camp-2018)
+by [ELEKS](https://eleks.com/), [ELEKS University](https://careers.eleks.com/university/), 
+[[ELEKS University] on Facebook](https://www.facebook.com/eleksuniversity/)
+
+## Teacher
+
+* **Vladimir Shevchuk** - [dosandk](https://github.com/dosandk)

@@ -18,32 +18,30 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar">
+
         <NavLink to="/" title="TypeMe!">
           <img src={logo} alt="Logo"/>
         </NavLink>
+
         <NavLink exact activeClassName="current" to="/" title="Practice">
-          <FontAwesomeIcon icon="stopwatch"
-                           size="2x"
-          />
+          <FontAwesomeIcon icon="stopwatch" size="2x" />
         </NavLink>
-        <NavLink exact activeClassName="current" to="/progress" title="Progress">
-          <FontAwesomeIcon icon="chart-line"
-                           size="2x"
-          />
+
+        <NavLink activeClassName="current" to="/progress" title="Progress">
+          <FontAwesomeIcon icon="chart-line" size="2x" />
         </NavLink>
-        <NavLink exact activeClassName="current" to="/learn" title="Learn">
-          <FontAwesomeIcon icon="chalkboard-teacher"
-                           size="2x"
-          />
+
+        <NavLink activeClassName="current" to="/learn" title="Learn">
+          <FontAwesomeIcon icon="chalkboard-teacher" size="2x" />
         </NavLink>
-        <NavLink exact activeClassName="current" to="/login" title="Log In">
-          <FontAwesomeIcon icon="user-circle"
-                           size="2x"
-          />
+
+        <NavLink activeClassName="current" to="/login" title="Log In">
+          <FontAwesomeIcon icon="user-circle" size="2x" />
           <span hidden={!this.props.user.success}>
             {this.props.user.name}
           </span>
         </NavLink>
+
       </nav>
     )
   }
