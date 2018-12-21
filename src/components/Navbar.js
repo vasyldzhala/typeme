@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom';
-// import {connect} from 'react-redux';
+import {NavLink, withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -46,22 +46,19 @@ class Navbar extends Component {
                            color="white"
                            size="2x"
           />
-          {/* TODO: Maybe move it to separate component with store connection */}
-          {/*<span hidden={!this.props.user.success}>*/}
-            {/*{this.props.user.name}*/}
-          {/*</span>*/}
+          <span hidden={!this.props.user.success}>
+            {this.props.user.name}
+          </span>
         </NavLink>
       </nav>
     )
   }
 }
 
-// TODO: should be passed via props
-// const mapStateToProps = state => ({
-//   user: state.userReducer
-// });
+const mapStateToProps = state => ({
+  user: state.userReducer
+});
 
-// export default connect(mapStateToProps)(Navbar);
-export default Navbar;
+export default withRouter(connect(mapStateToProps)(Navbar));
 
 
